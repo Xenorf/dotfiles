@@ -1,0 +1,22 @@
+#!/bin/sh
+
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
+
+# Compositor for transparency of terminals
+xcompmgr &
+
+update-screen
+
+# Wallpaper
+feh --no-fehbg --bg-scale '/home/louis/documents/wallpapers/wallpaperflare.com_wallpaper_1080.jpg' 
+
+# Status bar
+dwmblocks &
+
+# Keyboard shortcuts
+sxhkd &
+
+# Barrier to share keyboard and mouse
+barrierc --no-tray --debug INFO --name arch-laptop 192.168.1.15 &
+
+[ -n "$xrdbpid" ] && wait "$xrdbpid"

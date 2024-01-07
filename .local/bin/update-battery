@@ -1,0 +1,4 @@
+#!/bin/sh
+
+volume_signal=12
+/usr/bin/kill -$((34+$volume_signal)) $(/usr/bin/pidof dwmblocks)

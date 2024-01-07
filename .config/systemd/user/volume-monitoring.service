@@ -1,0 +1,10 @@
+[Unit]
+Description=Volume Monitoring Service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/volume-monitor.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

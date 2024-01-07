@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid -f "$TERMINAL" -e alsamixer ;;
+    3) "$TERMINAL" -e "$EDITOR" "$0" 2>/dev/null;;
+esac
+
+vol=$(awk -F"[][]" '/dB/ { gsub(/[%]/, "", $2); print $2 }' <(amixer -M get Master))
+mute=$(amixer get Master | awk -F'[][]' '/Mono:/ {print $6}')
+
+if [ "$vol" -eq 0 ] || [ "$mute" == "off" ]; then
+	icon=""
+	vol=""
+elif [ "$vol" -le 30 ]; then
+	icon=""
+	vol=" ${vol}%"
+elif [ "$vol" -le 70 ]; then
+	icon="🔈"
+	vol=" ${vol}%"
+elif [ "$vol" -le 100 ]; then
+	icon="🔊"
+	vol=" ${vol}%"
+fi
+
+echo "$icon$vol"

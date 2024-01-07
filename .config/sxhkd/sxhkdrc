@@ -1,0 +1,28 @@
+# Decrease volume
+XF86AudioLowerVolume
+  amixer -q sset Master 3%- -M
+
+# Increase volume
+XF86AudioRaiseVolume
+  amixer -q sset Master 3%+ -M
+
+# Toggle mute
+XF86AudioMute
+  amixer -q sset Master toggle
+
+# Increase brightness
+XF86MonBrightnessUp
+  xbacklight -inc 10 && /usr/bin/kill -50 $(/usr/bin/pidof dwmblocks)
+
+# Increase brightness
+XF86MonBrightnessDown
+  xbacklight -dec 10 && /usr/bin/kill -50 $(/usr/bin/pidof dwmblocks)
+
+
+# Toggle CapsLock
+Caps_Lock
+  /usr/bin/kill -49 $(/usr/bin/pidof dwmblocks)
+
+# Toggle NumLock
+Num_Lock
+  /usr/bin/kill -49 $(/usr/bin/pidof dwmblocks)

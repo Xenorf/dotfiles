@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid -f "$TERMINAL" -e xbacklight -inc 10;;
+    3) "$TERMINAL" -e "$EDITOR" "$0" 2>/dev/null;;
+esac
+
+brightness=$(($(cat /sys/class/backlight/intel_backlight/brightness) / 15))
+
+echo " $brightness%"

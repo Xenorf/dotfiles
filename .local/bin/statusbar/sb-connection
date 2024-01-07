@@ -1,0 +1,40 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid -f "$TERMINAL" -e nmtui ;;
+    3) "$TERMINAL" -e "$EDITOR" "$0" 2>/dev/null;;
+esac
+
+get_interface_ip() {
+    local interface="$1"
+    local ip_address
+
+    # Check if the interface exists
+    if ip address show "$interface" &> /dev/null; then
+        ip_address=$(ip address show "$interface" | awk '/inet / {split($2, a, "/"); print a[1]}')
+        echo "$ip_address"
+    fi
+}
+
+tun0=$(get_interface_ip "tun0")
+wlp2s0=$(get_interface_ip "wlp2s0")
+enp1s0f1=$(get_interface_ip "enp1s0f1")
+
+
+if [ -n "$enp1s0f1" ]; then
+	icon=""
+elif [ -n "$wlp2s0" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+# echo "$vpn  $icon"
+if [ -n "$tun0" ]; then
+	icon=" $tun0  $icon"
+fi
+echo "$icon"
+
+#wifi 
+#ethernet 
+#shield for vpn 

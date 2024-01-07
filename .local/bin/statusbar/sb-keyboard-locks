@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid -f "$TERMINAL" -e watch -n 1 xset q ;;
+    3) "$TERMINAL" -e "$EDITOR" "$0" 2>/dev/null;;
+esac
+sleep 0.3
+
+if [ $(xset -q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p') = "on" ]; then
+	icon=""
+fi
+
+if [ $(xset -q | sed -n 's/^.*Num Lock:\s*\(\S*\).*$/\1/p') = "on" ]; then
+	if [ $icon ]; then
+        icon="$icon "
+    else
+        icon=""
+    fi
+    # icon="$icon"
+fi
+
+echo "$icon"

@@ -1,0 +1,2 @@
+#SUBSYSTEM=="net", RUN+="/home/louis/.local/bin/update-connection"
+

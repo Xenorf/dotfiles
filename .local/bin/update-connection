@@ -1,0 +1,4 @@
+#!/bin/sh
+
+connection_signal=14
+/usr/bin/kill -$((34+$connection_signal)) $(/usr/bin/pidof dwmblocks)

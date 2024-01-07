@@ -1,0 +1,10 @@
+[Unit]
+Description=IP Monitoring Service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/ip-monitor.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

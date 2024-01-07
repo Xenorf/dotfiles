@@ -1,0 +1,6 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+    3) "$TERMINAL" -e "$EDITOR" "$0" 2>/tmp/error.txt;;
+esac
+
+echo " $(date '+%I:%M %p')"
