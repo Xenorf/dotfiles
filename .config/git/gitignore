@@ -21,7 +21,7 @@ Session.vim
 *.bak
 
 # Software sources
-.local/src/*
+#.local/src/*
 
 .config/*
 !.config/git
@@ -36,3 +36,4 @@ Session.vim
 .config/tmux/plugins
 !.config/sxhkd
 !.config/lf
+!.config/patches

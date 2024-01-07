@@ -1,0 +1,40 @@
+[submodule ".local/src/apulse"]
+	path = .local/src/apulse
+	url = https://aur.archlinux.org/apulse.git
+	branch = master
+[submodule ".local/src/discord_arch_electron"]
+	path = .local/src/discord_arch_electron
+	url = https://aur.archlinux.org/discord_arch_electron.git
+	branch = master
+[submodule ".local/src/upd72020x-fw"]
+	path = .local/src/upd72020x-fw
+	url = https://aur.archlinux.org/upd72020x-fw.git
+	branch = master
+[submodule ".local/src/wkhtmltopdf"]
+	path = .local/src/wkhtmltopdf
+	url = https://aur.archlinux.org/wkhtmltopdf.git
+	branch = master
+[submodule ".local/src/lfimg"]
+	path = .local/src/lfimg
+	url = https://github.com/thimc/lfimg.git
+	branch = master
+[submodule ".local/src/zsh-fast-syntax-highlighting"]
+	path = .local/src/zsh-fast-syntax-highlighting
+	url = https://aur.archlinux.org/zsh-fast-syntax-highlighting.git
+	branch = master
+[submodule ".local/src/dwmblocks-async"]
+	path = .local/src/dwmblocks-async
+	url = https://github.com/UtkarshVerma/dwmblocks-async.git
+	branch = main
+[submodule ".local/src/st-flexipatch"]
+	path = .local/src/st-flexipatch
+	url = https://github.com/bakkeby/st-flexipatch.git
+	branch = master
+[submodule ".local/src/dwm-flexipatch"]
+	path = .local/src/dwm-flexipatch
+	url = https://github.com/bakkeby/dwm-flexipatch.git
+	branch = master
+[submodule ".local/src/dmenu-flexipatch"]
+	path = .local/src/dmenu-flexipatch
+	url = https://github.com/bakkeby/dmenu-flexipatch.git
+	branch = master
