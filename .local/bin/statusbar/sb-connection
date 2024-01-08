@@ -31,7 +31,7 @@ fi
 
 # echo "$vpn  $icon"
 if [ -n "$tun0" ]; then
-	icon=" $tun0  $icon"
+	icon=" $tun0  $icon"
 fi
 echo "$icon"
 

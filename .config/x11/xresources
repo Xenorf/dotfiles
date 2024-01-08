@@ -1,9 +1,11 @@
 /* !! Transparency (0-1): */
-*.alpha: 0.95
+*.alpha: 1/*0.95*/
 *.alphaUnfocused: 0.8
 
 /* !! Set a default font and font size as below: */
-*.font: Hack Nerd Font Mono:size=12
+/**.font: UbuntuMono Nerd Font:size=15*/
+*.font: Hack Nerd Font Mono:size=14
+/**.font: Ubuntu Nerd Font:size=15*/
 
 #define nord0 #2E3440
 #define nord1 #3B4252
@@ -44,7 +46,6 @@
 *.color13: nord15
 *.color14: nord7
 *.color15: nord6
-
 /*DWM*/
 
 ! Normal window colors

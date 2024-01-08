@@ -9,16 +9,16 @@ vol=$(awk -F"[][]" '/dB/ { gsub(/[%]/, "", $2); print $2 }' <(amixer -M get Mast
 mute=$(amixer get Master | awk -F'[][]' '/Mono:/ {print $6}')
 
 if [ "$vol" -eq 0 ] || [ "$mute" == "off" ]; then
-	icon=""
+	icon="󰸈"
 	vol=""
 elif [ "$vol" -le 30 ]; then
 	icon=""
 	vol=" ${vol}%"
 elif [ "$vol" -le 70 ]; then
-	icon="🔈"
+	icon="󰖀"
 	vol=" ${vol}%"
 elif [ "$vol" -le 100 ]; then
-	icon="🔊"
+	icon="󰕾"
 	vol=" ${vol}%"
 fi
 
