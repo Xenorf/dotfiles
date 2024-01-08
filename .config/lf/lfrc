@@ -25,7 +25,13 @@ cmd open &{{
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         image/*) sxiv "$f";;
         video/*) vlc "$f";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+        #*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+        *)
+          case $f in
+              *.kdbx) keepassxc $f;;
+              *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+          esac
+          ;; 
     esac
 }}
 
@@ -47,7 +53,7 @@ cmd delete ${{
     printf "$fx\n"
     printf "delete?[y/N]"
     read ans
-    [ "$ans" = "y" ] && rm -rfvI $fx
+    [ "$ans" = "y" ] && rm -rfv $fx
 }}
 
 # extract the current file with the right command
@@ -100,3 +106,4 @@ map ` !true # show the result of execution of previous commands
 map X !$f # execute current file (must be executable)
 map zp toggle_preview
 map gL follow_link
+map e extract

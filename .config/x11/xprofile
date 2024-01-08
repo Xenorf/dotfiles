@@ -16,6 +16,9 @@ dwmblocks &
 # Keyboard shortcuts
 sxhkd &
 
+# Locking on inactivity
+xautolock -time 10 -locker "systemctl suspend" &
+
 # Barrier to share keyboard and mouse
 barrierc --no-tray --debug INFO --name arch-laptop 192.168.1.15 &
 
