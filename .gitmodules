@@ -38,3 +38,11 @@
 	path = .local/src/dmenu-flexipatch
 	url = https://github.com/bakkeby/dmenu-flexipatch.git
 	branch = master
+[submodule ".config/tmux/plugins/.config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/.config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+	branch = master
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+	branch = master

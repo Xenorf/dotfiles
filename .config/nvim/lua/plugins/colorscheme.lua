@@ -1,7 +1,6 @@
 return {
-  "shaunsingh/nord.nvim",
+  "dylanaraps/wal.vim",
   config = function()
-    vim.g.nord_disable_background = true
-    require("nord").set()
+    vim.cmd([[colorscheme wal]])
   end,
 }

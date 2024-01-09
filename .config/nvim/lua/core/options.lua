@@ -19,7 +19,7 @@ vim.cmd [[ set noswapfile ]]
 
 --Line numbers
 vim.wo.number = true
-vim.opt.termguicolors = true
+--vim.opt.termguicolors = true
 
 vim.api.nvim_exec([[
   set number

@@ -8,9 +8,9 @@ battery=/sys/class/power_supply/BAT1
 case "$(cat "$battery/status" 2>&1)" in
 	"Full") status="⚡" ;;
 	"Discharging") status="🔋" ;;
-	"Charging") status="🔌" ;;
-	"Not charging") status="♻️" ;;
-	"Unknown") status="♻️" ;;
+	"Charging") status="󱐥" ;;
+	"Not charging") status="" ;;
+	"Unknown") status="" ;;
 	*) exit 1 ;;
 esac
 capacity="$(cat "$battery/capacity" 2>&1)"

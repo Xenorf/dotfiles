@@ -4,7 +4,8 @@ intern="eDP-1"
 extern="HDMI-1"
 
 if [[ $(xrandr | grep "$extern connected") ]]; then
-	xrandr --output $intern --auto --output $extern --auto --right-of $intern &
+	#xrandr --output $intern --auto --output $extern --auto --right-of $intern &
+	xrandr --output $intern --auto --output $extern --auto --same-as $intern &
 else
 	xrandr --output $intern --auto --output $extern --off &
 fi

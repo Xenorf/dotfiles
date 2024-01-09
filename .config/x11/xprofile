@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
+#xrdb -merge ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 
 # Compositor for transparency of terminals
 xcompmgr &
@@ -8,7 +8,9 @@ xcompmgr &
 update-screen
 
 # Wallpaper
-feh --no-fehbg --bg-scale '/home/louis/documents/wallpapers/wallpaperflare.com_wallpaper_1080.jpg' 
+#feh --no-fehbg --bg-scale '/home/louis/documents/wallpapers/archlinux_black.png' 
+#wal -R &
+wal -R & walpid=$!
 
 # Status bar
 dwmblocks &
@@ -22,4 +24,5 @@ xautolock -time 10 -locker "systemctl suspend" &
 # Barrier to share keyboard and mouse
 barrierc --no-tray --debug INFO --name arch-laptop 192.168.1.15 &
 
-[ -n "$xrdbpid" ] && wait "$xrdbpid"
+#[ -n "$xrdbpid" ] && wait "$xrdbpid"
+[ -n "$walpid" ] && wait "$walpid"

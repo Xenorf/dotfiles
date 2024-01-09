@@ -34,7 +34,3 @@ if [ -n "$tun0" ]; then
 	icon=" $tun0  $icon"
 fi
 echo "$icon"
-
-#wifi 
-#ethernet 
-#shield for vpn 

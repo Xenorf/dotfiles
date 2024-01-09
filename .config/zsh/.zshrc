@@ -42,8 +42,8 @@ zle-line-init() {
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-# echo -ne '\e[5 q' # Use beam shape cursor on startup.
-# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
  lfcd () {
@@ -57,11 +57,7 @@ zle -N zle-line-init
  }
  bindkey -s '^o' '^ulfcd\n'
 
-# bindkey -s '^a' '^ubc -lq\n'
-
 # bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
-
-
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char

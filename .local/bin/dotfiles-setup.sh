@@ -1,5 +1,5 @@
 #!/bin/sh
-git clone --bare git@github.com:Xenorf/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/Xenorf/dotfiles.git $HOME/.dotfiles
 # Define config alias locally since the dotfiles aren't installed on the system yet
 function dotfiles {
    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@

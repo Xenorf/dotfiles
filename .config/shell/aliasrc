@@ -64,3 +64,6 @@ alias startx="startx 2>$HOME/logs/startx.log"
 alias chrome="chromium"
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tmux-clean="rm -rf $XDG_DATA_HOME/tmux/resurrect"
+alias nvim-clean="find $HOME -name 'Session.vim' -exec rm -f {} \;"
+
+#alias dmenu_run='dmenu_run -c -l 10 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -nhb "$color0" -nhf "$color4" -shb "$color0" -shf "$color4"'

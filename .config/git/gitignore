@@ -33,7 +33,7 @@ Session.vim
 !.config/zsh
 !.config/udev-rules
 !.config/tmux
-.config/tmux/plugins
 !.config/sxhkd
 !.config/lf
 !.config/patches
+!.config/wal

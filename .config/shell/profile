@@ -1,5 +1,4 @@
 #!/bin/sh
-# shellcheck disable=SC2155
 
 # Profile file, runs on login. Environmental variables are set here.
 
@@ -10,10 +9,6 @@ export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="chromium"
-
-# Change the default crypto/weather monitor sites.
-# export CRYPTOURL="rate.sx"
-# export WTTRURL="wttr.in"
 
 # XDG_RUNTIME_DIR is already set
 
@@ -67,8 +62,7 @@ XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 
 # [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
 
+. "$XDG_CACHE_HOME/wal/colors.sh"
+
 # Start graphical server on user's current tty if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC" 2> $HOME/logs/startx.log
-
-# Switch escape and caps if tty and no passwd required:
-# sudo -n loadkeys "$XDG_DATA_HOME/larbs/ttymaps.kmap" 2>/dev/null
