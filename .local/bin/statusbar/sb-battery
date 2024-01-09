@@ -7,20 +7,20 @@ esac
 battery=/sys/class/power_supply/BAT1
 case "$(cat "$battery/status" 2>&1)" in
 	"Full") status="⚡" ;;
-	"Discharging") status="🔋" ;;
+	"Discharging") status="" ;;
 	"Charging") status="󱐥" ;;
 	"Not charging") status="" ;;
 	"Unknown") status="" ;;
 	*) exit 1 ;;
 esac
 capacity="$(cat "$battery/capacity" 2>&1)"
-if [ "$status" = "🔋" ] && [ "$capacity" -le 10 ]; then
+if [ "$status" = "" ] && [ "$capacity" -le 10 ]; then
 	status=""
-elif [ "$status" = "🔋" ] && [ "$capacity" -le 25 ]; then
+elif [ "$status" = "" ] && [ "$capacity" -le 25 ]; then
 	status=""
-elif [ "$status" = "🔋" ] && [ "$capacity" -le 50 ]; then
+elif [ "$status" = "" ] && [ "$capacity" -le 50 ]; then
 	status=""
-elif [ "$status" = "🔋" ] && [ "$capacity" -le 75 ]; then
+elif [ "$status" = "" ] && [ "$capacity" -le 75 ]; then
 	status=""
 fi
 

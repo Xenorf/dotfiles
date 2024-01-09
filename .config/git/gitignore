@@ -36,4 +36,5 @@ Session.vim
 !.config/sxhkd
 !.config/lf
 !.config/patches
+!.config/npm
 !.config/wal
