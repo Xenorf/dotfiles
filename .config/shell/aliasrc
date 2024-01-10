@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sudo not required for some system commands
-for command in openvpn mount umount sv pacman updatedb su shutdown poweroff reboot ; do
+for command in exegol docker openvpn mount umount sv pacman updatedb su shutdown poweroff reboot ; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -10,8 +10,8 @@ alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -vI" \
-	bc="bc -ql" \
 	mkdir="mkdir -pv" \
+	df="df -h" \
 
 # Colorize commands when possible.
 alias \
@@ -57,7 +57,6 @@ alias src="cd $HOME/.local/src"
 alias config="cd $XDG_CONFIG_HOME"
 alias cache="cd $XDG_CACHE_HOME"
 alias bin="cd $HOME/.local/bin"
-alias certificates="cd /usr/local/share/ca-certificates"
 
 alias myip="curl ifconfig.io"
 alias startx="startx 2>$HOME/logs/startx.log"
@@ -66,4 +65,3 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tmux-clean="rm -rf $XDG_DATA_HOME/tmux/resurrect"
 alias nvim-clean="find $HOME -name 'Session.vim' -exec rm -f {} \;"
 
-#alias dmenu_run='dmenu_run -c -l 10 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -nhb "$color0" -nhf "$color4" -shb "$color0" -shf "$color4"'

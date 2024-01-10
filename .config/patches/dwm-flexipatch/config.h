@@ -448,8 +448,8 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-	[ALTERNATIVE_TAGS]    = { "", "", "󰕼", "D", "E", "F", "G", "H", "I" },
+	[DEFAULT_TAGS]        = { "", "", "󰕼", "4", "5", "6", "7", "󰨈", "󰨈" },
+	[ALTERNATIVE_TAGS]    = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
 
@@ -496,8 +496,9 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	//RULE(.class = "Gimp", .tags = 1 << 4)
-	//RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "Gimp", .tags = 1 << 3)
+	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "burp-StartBurp", .tags = 1 << 7)
 	RULE(.class = "Chromium", .tags = 1 << 1)
 	RULE(.class = "vlc", .tags = 1 << 2)
 	RULE(.title = "Event Tester" NOSWALLOW)
@@ -961,8 +962,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
 	#endif // FLEXTILE_DELUXE_LAYOUT
-	{ MODKEY,                       XK_h,          setmfact,               {.f = -0.05} },
-	{ MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_h,          setmfact,               {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,          setmfact,               {.f = +0.05} },
 	#if CFACTS_PATCH
 	{ MODKEY|ShiftMask,             XK_h,          setcfact,               {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,          setcfact,               {.f = -0.25} },

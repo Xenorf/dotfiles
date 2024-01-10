@@ -26,3 +26,9 @@ Caps_Lock
 # Toggle NumLock
 Num_Lock
   /usr/bin/kill -49 $(/usr/bin/pidof dwmblocks)
+
+super + shift + s
+  scrot '%Y-%m-%d_$wx$h.png' -s -e 'mv $f ~/documents/screenshots/'
+
+super + l
+  /usr/bin/slock

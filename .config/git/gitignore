@@ -24,6 +24,8 @@ Session.vim
 #.local/src/*
 
 .config/*
+.config/tmux/plugins/*
+!.config/tmux/plugins/tmp/
 !.config/git
 !.config/keepassxc
 !.config/nvim
