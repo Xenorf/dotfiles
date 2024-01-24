@@ -1,0 +1,75 @@
+configuration {
+  display-drun: "Applications:";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "Monospace";
+  modi: "window,run,drun";
+  
+  show-icons: true;
+  icon-theme: "Papirus";
+  kb-row-up: "Up,Control+k";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  terminal: "kitty";
+  kb-remove-to-eol: "Control+Shift+e";
+  /*kb-mode-next: "Shift+Right,Control+l";*/
+  kb-mode-previous: "Shift+Left,Control+h";
+  kb-remove-char-back: "BackSpace";
+}
+
+@theme "/dev/null"
+
+@import "~/.cache/wal/colors-rofi-dark"
+
+* {
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+}
+
+element {
+  padding: 8 12;
+  background-color: transparent;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}
+
+entry {
+  padding: 12;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  columns: 1;
+  lines: 10;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+}
+
+/* vim: ft=css

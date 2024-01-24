@@ -1,0 +1,52 @@
+@import url("/home/louis/.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  font-family: "Fira Code", "Symbols Nerd Font Mono";
+  font-size: 19px;
+  min-height: 40px;
+  color: @color4;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar > * {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+#custom-arch,
+#custom-spotify,
+#tray,
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#keyboard-state {
+  border-radius: 10px;
+  background-color: @background;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*Bigger icons*/
+#custom-arch {
+  font-size: 30px;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#keyboard-state label:first-child {
+  margin-right: 10px;
+}
+
+#keyboard-state label.locked {
+  color: @color15;
+}

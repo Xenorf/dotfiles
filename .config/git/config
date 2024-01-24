@@ -1,0 +1,12 @@
+[user]
+	name = Xenorf
+	email = xenorf@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = false

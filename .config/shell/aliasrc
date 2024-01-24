@@ -1,0 +1,112 @@
+#!/bin/sh
+
+# XDG specification compatibility
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias feh="feh --no-fehbg"
+
+# Verbosity
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkdir="mkdir -pv" \
+	df="df -h"
+
+# Colorize commands when possible or use grc
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	ll="ls -lAF1" \
+	dir="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ip="ip -color=auto"
+
+alias colourify="grc -es"
+alias blkid="colourify blkid" \
+	nmap="colourify nmap" \
+	configure="colourify ./configure" \
+	df="colourify df" \
+	docker="colourify docker" \
+	docker-compose="colourify docker-compose" \
+	docker-machine="colourify docker-machine" \
+	du="colourify du" \
+	free="colourify free" \
+	fdisk="colourify fdisk" \
+	findmnt="colourify findmnt" \
+	make="colourify make" \
+	gcc="colourify gcc" \
+	g++="colourify g++" \
+	id="colourify id" \
+	ip="colourify ip" \
+	iptables="colourify iptables" \
+	as="colourify as" \
+	gas="colourify gas" \
+	journalctl="colourify journalctl" \
+	kubectl="colourify kubectl" \
+	ld="colourify ld" \
+	lsof="colourify lsof" \
+	lsblk="colourify lsblk" \
+	lspci="colourify lspci" \
+	netstat="colourify netstat" \
+	ping="colourify ping" \
+	ss="colourify ss" \
+	traceroute="colourify traceroute" \
+	traceroute6="colourify traceroute6" \
+	head="colourify head" \
+	tail="colourify tail" \
+	dig="colourify dig" \
+	mount="colourify mount" \
+	ps="colourify ps" \
+	mtr="colourify mtr" \
+	semanage="colourify semanage" \
+	getsebool="colourify getsebool" \
+	ifconfig="colourify ifconfig" \
+	sockstat="colourify sockstat"
+
+# sudo not required for some system commands
+for command in docker openvpn mount umount sv pacman updatedb su shutdown poweroff reboot; do
+	alias $command="sudo $command"
+done
+unset command
+
+# Enable the use of alias after the sudo command
+alias sudo="sudo "
+
+# force zsh to show the complete history
+alias history="history 0"
+
+# Always use neovim and add session support
+nvim() {
+	if test $# -gt 0; then
+		env nvim "$@"
+	elif test -f Session.vim; then
+		env nvim -S
+	else
+		env nvim -c Obsession
+	fi
+}
+alias vim="nvim" vimdiff="nvim -d"
+alias rnvim="nvim -u NONE"
+alias rvim="nvim -u NONE"
+
+# Launch VPN quickly
+alias tryhackme="sudo openvpn --config $HOME/documents/ovpn_configs/tryhackme.ovpn"
+alias prolabs="sudo openvpn --config $HOME/documents/ovpn_configs/pro_labs_Xenorf.ovpn"
+alias playground="sudo openvpn --config $HOME/documents/ovpn_configs/pg.ovpn"
+alias offsec="sudo openvpn --config $HOME/documents/ovpn_configs/universal.ovpn"
+
+# Favorite directories
+alias dl="cd $HOME/downloads"
+alias doc="cd $HOME/documents"
+alias logs="cd $HOME/logs"
+alias src="cd $HOME/.local/src"
+alias config="cd $XDG_CONFIG_HOME"
+alias cache="cd $XDG_CACHE_HOME"
+alias bin="cd $HOME/.local/bin"
+
+alias myip="curl ifconfig.io"
+alias startx="startx 2>$HOME/logs/startx.log"
+alias chrome="chromium"
+alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias tmux-clean="rm -rf $XDG_DATA_HOME/tmux/resurrect"
+alias nvim-clean="find $HOME -name 'Session.vim' -exec rm -f {} \;"

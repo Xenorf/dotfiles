@@ -1,0 +1,11 @@
+[Unit]
+Description=rclone mount service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount keepassxc:KeepassXC %h/documents/keepassxc
+
+[Install]
+WantedBy=default.target

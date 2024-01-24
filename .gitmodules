@@ -1,0 +1,24 @@
+[submodule ".local/src/upd72020x-fw"]
+	path = .local/src/upd72020x-fw
+	url = https://aur.archlinux.org/upd72020x-fw.git
+	branch = master
+[submodule ".local/src/zsh-fast-syntax-highlighting"]
+	path = .local/src/zsh-fast-syntax-highlighting
+	url = https://aur.archlinux.org/zsh-fast-syntax-highlighting.git
+	branch = master
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+	branch = master
+[submodule ".local/src/hyprpicker"]
+	path = .local/src/hyprpicker
+	url = https://aur.archlinux.org/hyprpicker.git
+	branch = master
+[submodule ".local/src/xkb-qwerty-fr"]
+	path = .local/src/xkb-qwerty-fr
+	url = https://aur.archlinux.org/xkb-qwerty-fr.git
+	branch = master
+[submodule ".local/src/looking-glass"]
+	path = .local/src/looking-glass
+	url = https://aur.archlinux.org/looking-glass.git
+	branch = master

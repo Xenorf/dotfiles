@@ -1,0 +1,92 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "spacing": 15, // Gaps between modules (4px)
+    "modules-left": ["custom/arch", "hyprland/workspaces", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/spotify", "network", "keyboard-state", "pulseaudio#input", "pulseaudio#output"],
+
+    // Modules configuration
+    "custom/spotify": {
+      "exec": "$HOME/.local/bin/mediaplayer.py --player spotify 2>/dev/null",
+      "escape": true,
+      "return-type": "json",
+      "on-click": "playerctl --player spotify play-pause",
+      "on-scroll-up": "playerctl --player spotify next",
+      "on-scroll-down": "playerctl --player spotify previous",
+      "format": "{}",
+      "tooltip": false,
+      "exec-if": "pgrep spotify",
+    },
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "active": "",
+        "default": ""
+      },
+      "on-scroll-up": "hyprctl dispatch workspace e-1",
+      "on-scroll-down": "hyprctl dispatch workspace e+1",
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "",
+            "capslock": "",
+        }, 
+    },
+    "tray": {
+        "icon-size": 25,
+        "spacing": 10
+    },
+    "clock": {
+      "format": " {:%H:%M}",
+      "format-alt": "󰸗 {:%Y-%m-%d}"
+    },
+    "network": {
+        "interface": "tun0",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "󰒘 {ipaddr}",
+        "format-disconnected": "",
+        "tooltip": false
+    },
+    "pulseaudio#input": {
+    "format-source": " {volume}%",
+        "format-source-muted": " ",
+        "format": "{format_source}",
+        "scroll-step": 1,
+        "smooth-scrolling-threshold": 1,
+        "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
+    },
+    "pulseaudio#output": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁",
+        "format-icons": {
+        "default": ["", "", ""]
+        },
+        "max-volume": 153,
+        "scroll-step": 1,
+        "smooth-scrolling-threshold": 1,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "pavucontrol",
+    },
+    // Unused for now
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+}
+

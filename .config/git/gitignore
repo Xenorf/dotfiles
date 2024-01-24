@@ -1,0 +1,45 @@
+# Ignore dotfiles repository
+.dotfiles
+
+# Important stuff I would not want to get out on the internet
+documents
+downloads
+.local/share
+.ssh
+
+# Files and folder that don't respect the XDG specification (chromium)
+.pki
+
+# Cache and logs
+.cache/
+.local/state
+Session.vim
+*.bak
+
+# Software sources
+#.local/src/*
+
+.config/*
+!.config/dunst
+!.config/fontconfig
+!.config/git
+!.config/hooks
+!.config/hypr
+!.config/kitty
+!.config/lf
+!.config/npm
+!.config/nvim
+!.config/patches
+!.config/resources
+!.config/rofi
+!.config/shell
+!.config/swaylock
+!.config/systemd
+!.config/tmux
+.config/tmux/plugins/*
+!.config/tmux/plugins/tmp/
+!.config/wal
+!.config/waybar
+!.config/zsh
+
+!.config/win11.xml
