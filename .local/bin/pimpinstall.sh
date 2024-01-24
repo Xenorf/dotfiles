@@ -35,7 +35,8 @@ pacman -S \
 	tmux \
 	zsh-autosuggestions \
 	zsh-completions \
-	zsh-history-substring-search \
+	fzf \
+	#zsh-history-substring-search \
 	grc \
 	jq
 
@@ -74,6 +75,7 @@ pacman -S \
 	grim \
 	slurp
 
+# Don't forget to create .cache/lf for previews to work
 echo "[+] Installing LF preview packages"
 pacman -S \
 	bat \

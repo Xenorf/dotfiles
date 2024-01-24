@@ -83,14 +83,14 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	;;
 *.ino) batorcat --language=cpp "$1" ;;
 *)
-	#echo "Default case" >>~/lf.log
 	case $(file --brief --mime-type "$1") in
 	application/json)
-		#echo "JSON case" >>~/lf.log
 		jq . "$1"
 		;;
+	application/javascript)
+		batorcat "$1"
+		;;
 	*)
-		#echo "Super default case" #>>~/lf.log
 		file -ibL "$1" | grep -q text && batorcat "$1" || file -Lb "$1"
 		;;
 	esac

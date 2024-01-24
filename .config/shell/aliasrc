@@ -63,9 +63,13 @@ alias blkid="colourify blkid" \
 	ifconfig="colourify ifconfig" \
 	sockstat="colourify sockstat"
 
-# sudo not required for some system commands
 for command in docker openvpn mount umount sv pacman updatedb su shutdown poweroff reboot; do
-	alias $command="sudo $command"
+    if alias $command &> /dev/null; then
+        existing_alias=$(alias $command | sed -E "s/^$command='(.*)'/\1/")
+        alias $command="sudo $existing_alias"
+    else
+        alias $command="sudo $command"
+    fi
 done
 unset command
 
@@ -110,3 +114,4 @@ alias chrome="chromium"
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tmux-clean="rm -rf $XDG_DATA_HOME/tmux/resurrect"
 alias nvim-clean="find $HOME -name 'Session.vim' -exec rm -f {} \;"
+alias notes="ln -sf \"\${PWD}/\$(fzf)\" $HOME/documents/notes"

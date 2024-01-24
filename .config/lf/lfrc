@@ -25,10 +25,10 @@ cmd open &{{
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         image/*) sxiv "$f";;
         video/*) vlc "$f";;
-        #*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
         *)
           case $f in
               *.kdbx) keepassxc $f;;
+              *.torrent) qbittorrent $f & disown;;
               *) lf -remote "send $id \$$EDITOR \$fx";
           esac
           ;; 

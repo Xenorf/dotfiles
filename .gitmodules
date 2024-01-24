@@ -22,3 +22,7 @@
 	path = .local/src/looking-glass
 	url = https://aur.archlinux.org/looking-glass.git
 	branch = master
+[submodule ".local/src/swaylock-effects"]
+	path = .local/src/swaylock-effects
+	url = https://aur.archlinux.org/swaylock-effects.git
+	branch = master

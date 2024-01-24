@@ -33,6 +33,7 @@ Session.vim
 !.config/resources
 !.config/rofi
 !.config/shell
+!.config/swayidle
 !.config/swaylock
 !.config/systemd
 !.config/tmux
