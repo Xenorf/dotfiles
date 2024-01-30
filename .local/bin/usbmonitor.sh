@@ -6,7 +6,6 @@ fi
 icon="$HOME/.config/resources/icons/usbkey.png"
 
 usb_action="$1"
-echo "oui $usb_action" >>/home/louis/test.log
 
 case "$usb_action" in
 "plug")

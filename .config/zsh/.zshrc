@@ -56,7 +56,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
  }
  bindkey -s '^o' '^ulfcd\n'
 
-# bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
+bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -69,16 +69,19 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Vim normal mode key bindings
-bindkey -M vicmd '^[[P' vi-delete-char
+bindkey -M vicmd '^[[P' vi-delete-char # adding support for the delete key on st
+bindkey -M vicmd '^[[3~' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-bindkey -M vicmd '^[[A' history-substring-search-up
-bindkey -M vicmd '^[[B' history-substring-search-down
-bindkey -M visual '^[[P' vi-delete # adding support for the delete key
+# bindkey -M vicmd 'k' history-substring-search-up
+# bindkey -M vicmd 'j' history-substring-search-down
+# bindkey -M vicmd '^[[A' history-substring-search-up
+# bindkey -M vicmd '^[[B' history-substring-search-down
+bindkey -M visual '^[[P' vi-delete # adding support for the delete key on st
+bindkey -M visual '^[[3~' vi-delete # adding support for the delete key
 
 # Vim insert mode key bindings
-bindkey -M viins '^[[P' delete-char # adding support for the delete key
+bindkey -M viins '^[[P' delete-char # adding support for the delete key on st
+bindkey -M viins '^[[3~' delete-char # adding support for the delete key
 bindkey -M viins '^?' backward-delete-char # makes sure backspace works at all time in insert mode
 
 # Universal bind keys
