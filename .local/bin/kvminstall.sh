@@ -87,7 +87,11 @@ case "$answer" in
 esac
 
 echo "Installing looking glass tweeks"
-echo "f /dev/shm/looking-glass 0660 $SUDO_USER kvm -" >/etc/tmpfiles.d/10-looking-glass.conf
+# Missing the uncomment of cgroup_device_acl in /etc/libvirt/qemu.conf and adding /dev/kvmfr0 (https://forum.level1techs.com/t/sovlde-cant-open-backing-store-dev-kvmfr0-for-guest-ram-operation-not-permitted/180606/3)
+#echo "f /dev/shm/looking-glass 0660 $SUDO_USER kvm -" > /etc/tmpfiles.d/10-looking-glass.conf
+echo "SUBSYSTEM==\"kvmfr\", OWNER=\"$SUDO_USER\", GROUP=\"kvm\", MODE=\"0660\"" > /etc/udev/rules.d/99-kvmfr.rules
+echo "kvmfr" > /etc/modules-load.d/kvmfr.conf
+echo "options kvmfr static_size_mb=64" > /etc/modprobe.d/kvmfr.conf
 
 echo "Don't forget to reboot your system"
 # Add iommu=pt to bootloader

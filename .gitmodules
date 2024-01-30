@@ -26,3 +26,11 @@
 	path = .local/src/swaylock-effects
 	url = https://aur.archlinux.org/swaylock-effects.git
 	branch = master
+[submodule ".local/src/rofi-lbonn-wayland"]
+	path = .local/src/rofi-lbonn-wayland
+	url = https://aur.archlinux.org/rofi-lbonn-wayland.git
+	branch = master
+[submodule ".local/src/brave-bin"]
+	path = .local/src/brave-bin
+	url = https://aur.archlinux.org/brave-bin.git
+	branch = master

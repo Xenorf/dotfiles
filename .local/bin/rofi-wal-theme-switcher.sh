@@ -13,8 +13,8 @@ else
 fi
 
 if [ -n "$selected_theme" ]; then
-	echo "DP-1,$WALLPAPERDIR/$selected_theme"
-	hyprctl hyprpaper wallpaper "DP-1,$WALLPAPERDIR/$selected_theme"
+	echo "HDMI-A-1,$WALLPAPERDIR/$selected_theme"
+	hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPERDIR/$selected_theme"
 	wal -i "$WALLPAPERDIR/$selected_theme" --saturate 0.6 >/dev/null
 	killall -SIGUSR2 waybar
 	# Make the change persitent

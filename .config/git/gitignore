@@ -26,6 +26,7 @@ Session.vim
 !.config/hooks
 !.config/hypr
 !.config/kitty
+!.config/looking-glass
 !.config/lf
 !.config/npm
 !.config/nvim
@@ -44,3 +45,4 @@ Session.vim
 !.config/zsh
 
 !.config/win11.xml
+!.config/win11_2.xml
