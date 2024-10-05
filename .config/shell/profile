@@ -24,6 +24,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 # export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 # export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 # export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
@@ -61,6 +62,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export MOZ_USE_XINPUT2=1                  # Mozilla smooth scrolling/touchpads.
 # export AWT_TOOLKIT="MToolkit wmname LG3D" # May have to install wmname
 # export _JAVA_AWT_WM_NONREPARENTING=1      # Fix for Java applications in dwm
+
+. "$ZDOTDIR/.zshrc"
 
 # [ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
 (cat "$XDG_CACHE_HOME/wal/sequences" &)

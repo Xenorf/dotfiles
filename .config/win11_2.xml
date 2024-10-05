@@ -6,8 +6,8 @@
       <libosinfo:os id="http://microsoft.com/win/11"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory unit="KiB">12582912</memory>
-  <currentMemory unit="KiB">12582912</currentMemory>
+  <memory unit="KiB">16777216</memory>
+  <currentMemory unit="KiB">16777216</currentMemory>
   <vcpu placement="static">8</vcpu>
   <os firmware="efi">
     <type arch="x86_64" machine="pc-q35-8.2">hvm</type>
@@ -60,7 +60,7 @@
   <on_crash>destroy</on_crash>
   <pm>
     <suspend-to-mem enabled="no"/>
-    <suspend-to-disk enabled="yes"/>
+    <suspend-to-disk enabled="no"/>
   </pm>
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
@@ -199,28 +199,28 @@
     </video>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
+        <address domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
+      </source>
+      <boot order="1"/>
+      <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x0d" slot="0x00" function="0x3"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x1"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x0b" slot="0x00" function="0x3"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x1"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
-    </hostdev>
-    <hostdev mode="subsystem" type="pci" managed="yes">
-      <source>
-        <address domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
-      </source>
-      <boot order="1"/>
-      <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
     </hostdev>
     <watchdog model="itco" action="reset"/>
     <memballoon model="none"/>
@@ -232,3 +232,4 @@
     <qemu:arg value="{&quot;qom-type&quot;:&quot;memory-backend-file&quot;,&quot;id&quot;:&quot;looking-glass&quot;,&quot;mem-path&quot;:&quot;/dev/kvmfr0&quot;,&quot;size&quot;:67108864,&quot;share&quot;:true}"/>
   </qemu:commandline>
 </domain>
+
