@@ -1,6 +1,7 @@
 [user]
 	name = Xenorf
-	email = xenorf@gmail.com
+	email = 90411648+Xenorf@users.noreply.github.com
+	signingkey = 6CF157BAFD6349A3
 [alias]
 	co = checkout
 	br = branch
@@ -10,3 +11,5 @@
 	defaultBranch = main
 [core]
 	autocrlf = false
+[commit]
+	gpgsign = true
