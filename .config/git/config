@@ -1,7 +1,7 @@
 [user]
 	name = Xenorf
 	email = 90411648+Xenorf@users.noreply.github.com
-	signingkey = 6CEA7C476C29F860
+	signingkey = 44F7FCC1C522EF30EA6CB0C7177F5CACAFA12A1B
 [alias]
 	co = checkout
 	br = branch

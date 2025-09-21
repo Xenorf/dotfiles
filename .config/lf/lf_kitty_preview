@@ -5,12 +5,14 @@ h=$3
 x=$4
 y=$5
 
+mkdir -p "$HOME/.cache/lf"
 CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' \
 	-- "$(readlink -f "$1")" | sha256sum | awk '{print $1}'))"
 
 image() {
 	if [ -n "$DISPLAY" ]; then
-		kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$1" </dev/null >/dev/tty
+		#kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$1" </dev/null >/dev/tty
+		ascii-image-converter --dimensions "$(tput cols),$(tput lines)" "$1"
 		exit 1
 	fi
 }
